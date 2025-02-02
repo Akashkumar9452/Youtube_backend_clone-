@@ -1,8 +1,9 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
-import {User} from "modules/user.model.js";
+import {User} from "../models/user.model.js";
 import {uploadONCloudnary} from "../utils/cloudinary.js";
 import { ApiResponse } from "../utils/Apiresponse.js";
+
 
 const registerUser = asyncHandler(async (req, res) => {
        // get user detail from frontend 
@@ -60,7 +61,7 @@ const registerUser = asyncHandler(async (req, res) => {
      }
 
      return res.status(201).json(
-        new ApiResponse(200,createdUser, "User created successfully")
+        new ApiResponse(200, createdUser, "User created successfully")
      )
 
 })

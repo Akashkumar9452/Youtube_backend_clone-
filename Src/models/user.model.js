@@ -1,11 +1,11 @@
 import mongoose, {Schema} from "mongoose";
 import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
+import bcryptjs from "bcryptjs";
 
 const userSchema = new Schema(
     {
         username:{
-            type: string,
+            type: String,
             required: true,
             unique: true,
             lowecase: true,
@@ -13,25 +13,25 @@ const userSchema = new Schema(
             index: true,
        },
         email :{
-        type: string,
+        type: String,
         required: true,
         
        },
        
        fullname:{
-        type: string,
+        type: String,
         required: true,
         trim: true,
         index: true,
        },
 
        avatar:{
-         type: string, // cloudnary service
+         type: String, // cloudnary service
          required: true,
        },
 
        coverImage: {
-        type: string,
+        type: String,
 
        },
 
@@ -41,12 +41,12 @@ const userSchema = new Schema(
        },
 
        password:{
-        type: string,
+        type: String,
         required: [true, 'password is required '],
        },
        
        refreshToken:{
-         type: string,  
+         type: String,  
        },
 
 
